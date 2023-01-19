@@ -51,7 +51,34 @@ function warnTheSheep(queue) {
  ```
 
 ---
-## ---
+## ---Morse Code---
+
+* [Test](https://www.codewars.com/kata/54b724efac3d5402db00065e/train/javascript)
+
+Resources / /
+* [Trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+* [Split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+* [Join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+* [Morse Code](https://en.wikipedia.org/wiki/Morse_code)
+
+Solution / /
+
+``` javascript
+decodeMorse = function (morseCode) {
+  let sentence = [];
+  let word = morseCode.trim().split('   ');
+  let letters = [];
+  for (let i = 0; i < word.length; i++) {
+    letters = word[i].split(' ');
+    for (let j = 0; j < letters.length; j++) {
+     letters[j] = MORSE_CODE[letters[j]];
+    }
+    sentence.push(letters.join(''));
+  }
+  return sentence.join(' ').trim();
+};
+```
+
 ---
 ## ---Knowledge Base---
 
